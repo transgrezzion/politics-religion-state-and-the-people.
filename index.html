@@ -5,34 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discourse | State & Religion</title>
     <style>
-        /* BASE RESET */
+        /* RESET & CORE THEME */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* THEME COLORS & FONTS */
-        :root {
-            --bg-color: #000000;
-            --matrix-green: #00FF41;
-            --dark-green: #003B00;
-        }
-
-        html, body {
-            background-color: var(--bg-color) !important;
-            color: var(--matrix-green) !important;
-            font-family: 'Courier New', Courier, monospace;
-            height: 100%;
-            width: 100%;
+        body {
+            background-color: #000000 !important; /* Deepest Black */
+            color: #00FF41 !important; /* High-Vibrancy Matrix Green */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow-x: hidden;
         }
 
-        /* TWO-SLIDE LAYOUT */
-        .page-wrapper {
+        /* SPLIT SCREEN CONTAINER */
+        .main-wrapper {
             display: flex;
+            min-height: 100vh;
             width: 100vw;
-            height: 100vh;
         }
 
         .slide {
@@ -41,111 +32,144 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 40px;
+            padding: 50px;
             text-align: center;
-            border: 2px solid var(--matrix-green);
-            transition: background 0.4s ease;
+            border: 2px solid #00FF41;
+            box-shadow: inset 0 0 20px rgba(0, 255, 65, 0.2);
+            transition: all 0.4s ease-in-out;
         }
 
-        /* LEFT SIDE - STATE MATTERS */
+        /* VIBRANT HOVER EFFECTS */
+        .slide:hover {
+            background-color: rgba(0, 255, 65, 0.05);
+            box-shadow: inset 0 0 50px rgba(0, 255, 65, 0.4);
+        }
+
         .left-slide {
-            background-color: #000000;
-            border-right: 1px solid var(--matrix-green);
+            border-right: 1px solid #00FF41;
         }
 
-        /* RIGHT SIDE - RELIGIOUS MATTERS */
-        .right-slide {
-            background-color: #050505; /* Slightly different black for distinction */
-            border-left: 1px solid var(--matrix-green);
-        }
-
-        /* HEADER STYLING */
+        /* TEXT STYLING */
         h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             text-transform: uppercase;
-            letter-spacing: 8px;
-            margin-bottom: 15px;
-            text-shadow: 0 0 10px var(--matrix-green);
+            letter-spacing: 10px;
+            margin-bottom: 20px;
+            color: #00FF41;
+            text-shadow: 0 0 15px #00FF41, 0 0 30px #00FF41; /* Neon Glow */
         }
 
-        .category-tag {
-            background-color: var(--matrix-green);
-            color: #000;
-            padding: 5px 15px;
-            font-weight: bold;
-            margin-bottom: 25px;
-            text-transform: uppercase;
+        p.description {
+            font-size: 1.2rem;
+            max-width: 450px;
+            margin-bottom: 40px;
+            color: #ADFF2F; /* Lighter Green for contrast */
+            font-weight: 300;
         }
 
-        /* CONTACT SECTION */
-        .contact-footer {
-            margin-top: 40px;
-            padding: 20px;
-            border: 1px dashed var(--matrix-green);
+        /* UPLOAD & PROJECTS SECTION */
+        .project-card {
             width: 100%;
             max-width: 400px;
+            background: rgba(0, 59, 0, 0.3);
+            border: 1px solid #00FF41;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: left;
         }
 
-        .contact-footer p {
-            font-size: 1.2rem;
-            margin: 10px 0;
-            font-weight: bold;
+        .project-card h3 {
+            font-size: 0.9rem;
+            border-bottom: 1px solid #00FF41;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
         }
 
-        .contact-link {
-            color: var(--matrix-green);
+        .upload-portal {
+            display: inline-block;
+            padding: 15px 40px;
+            border: 3px solid #00FF41;
+            color: #00FF41;
             text-decoration: none;
-            border-bottom: 1px solid transparent;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 0 10px #00FF41;
+            transition: 0.3s;
         }
 
-        .contact-link:hover {
-            border-bottom: 1px solid var(--matrix-green);
-            background-color: var(--dark-green);
+        .upload-portal:hover {
+            background: #00FF41;
+            color: #000;
+            box-shadow: 0 0 30px #00FF41;
         }
 
-        /* MOBILE RESPONSIVENESS */
+        /* FOOTER / CONTACTS */
+        .footer-contact {
+            margin-top: 50px;
+            padding: 20px;
+            background: #001a00;
+            border: 1px dashed #00FF41;
+            width: 100%;
+        }
+
+        .footer-contact p {
+            font-weight: bold;
+            margin: 5px 0;
+            font-size: 1.1rem;
+        }
+
+        /* MOBILE VIEW */
         @media (max-width: 768px) {
-            .page-wrapper {
+            .main-wrapper {
                 flex-direction: column;
             }
             .slide {
-                height: 50vh;
-                border-right: none;
-                border-left: none;
+                height: 100vh;
             }
             h1 {
-                font-size: 1.8rem;
+                font-size: 2.5rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="page-wrapper">
+    <div class="main-wrapper">
         
         <section class="slide left-slide">
-            <div class="category-tag">Public Affairs</div>
-            <h1>Political & State</h1>
-            <p>Analysis of governance, legal frameworks, and statecraft.</p>
+            <h1>STATE</h1>
+            <p class="description">Analysis of governance, constitutionalism, and political evolution in the modern era.</p>
             
-            <div class="contact-footer">
-                <p>Email: <a href="mailto:elilislegal@gmail.com" class="contact-link">elilislegal@gmail.com</a></p>
-                <p>Phone: <a href="tel:0790004418" class="contact-link">0790004418</a></p>
+            <div class="project-card">
+                <h3>UPCOMING PROJECTS</h3>
+                <ul>
+                    <li>• Legislative Intelligence Brief v1.0</li>
+                    <li>• Devolution & Resource Mapping</li>
+                </ul>
+            </div>
+
+            <a href="https://drive.google.com" target="_blank" class="upload-portal">Upload Work</a>
+
+            <div class="footer-contact">
+                <p>📧 elilislegal@gmail.com</p>
+                <p>📞 0790004418</p>
             </div>
         </section>
 
-        <section class="slide right-slide">
-            <div class="category-tag">Spiritual Inquiry</div>
-            <h1>Religious Matters</h1>
-            <p>Exploration of faith, theology, and religious impact on society.</p>
+        <section class="slide">
+            <h1>RELIGION</h1>
+            <p class="description">Exploring the intersection of faith, state, and the evolution of spiritual consciousness.</p>
             
-            <div class="contact-footer">
-                <p>Email: <a href="mailto:elilislegal@gmail.com" class="contact-link">elilislegal@gmail.com</a></p>
-                <p>Phone: <a href="tel:0790004418" class="contact-link">0790004418</a></p>
+            <div class="project-card">
+                <h3>UPCOMING PROJECTS</h3>
+                <ul>
+                    <li>• Theology & The State: A Study</li>
+                    <li>• Consciousness & Presence Briefs</li>
+                </ul>
             </div>
-        </section>
 
-    </div>
+            <a href="https://drive.google.com" target="_blank" class="upload-portal">Submit Inquiry</a>
 
-</body>
-</html>
+            <div class="footer-contact">
