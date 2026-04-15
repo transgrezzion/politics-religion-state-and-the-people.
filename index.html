@@ -4,32 +4,147 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discourse | State & Religion</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* BASE RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* THEME COLORS & FONTS */
+        :root {
+            --bg-color: #000000;
+            --matrix-green: #00FF41;
+            --dark-green: #003B00;
+        }
+
+        html, body {
+            background-color: var(--bg-color) !important;
+            color: var(--matrix-green) !important;
+            font-family: 'Courier New', Courier, monospace;
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* TWO-SLIDE LAYOUT */
+        .page-wrapper {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .slide {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            text-align: center;
+            border: 2px solid var(--matrix-green);
+            transition: background 0.4s ease;
+        }
+
+        /* LEFT SIDE - STATE MATTERS */
+        .left-slide {
+            background-color: #000000;
+            border-right: 1px solid var(--matrix-green);
+        }
+
+        /* RIGHT SIDE - RELIGIOUS MATTERS */
+        .right-slide {
+            background-color: #050505; /* Slightly different black for distinction */
+            border-left: 1px solid var(--matrix-green);
+        }
+
+        /* HEADER STYLING */
+        h1 {
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px var(--matrix-green);
+        }
+
+        .category-tag {
+            background-color: var(--matrix-green);
+            color: #000;
+            padding: 5px 15px;
+            font-weight: bold;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        /* CONTACT SECTION */
+        .contact-footer {
+            margin-top: 40px;
+            padding: 20px;
+            border: 1px dashed var(--matrix-green);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .contact-footer p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .contact-link {
+            color: var(--matrix-green);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+
+        .contact-link:hover {
+            border-bottom: 1px solid var(--matrix-green);
+            background-color: var(--dark-green);
+        }
+
+        /* MOBILE RESPONSIVENESS */
+        @media (max-width: 768px) {
+            .page-wrapper {
+                flex-direction: column;
+            }
+            .slide {
+                height: 50vh;
+                border-right: none;
+                border-left: none;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <div class="split-container">
+    <div class="page-wrapper">
+        
         <section class="slide left-slide">
-            <div class="content">
-                <h1>State Matters</h1>
-                <p>Analysis of governance, constitutionalism, and political evolution.</p>
-                <div class="contact-info">
-                    <p>📧 elilislegal@gmail.com</p>
-                    <p>📞 0790004418</p>
-                </div>
+            <div class="category-tag">Public Affairs</div>
+            <h1>Political & State</h1>
+            <p>Analysis of governance, legal frameworks, and statecraft.</p>
+            
+            <div class="contact-footer">
+                <p>Email: <a href="mailto:elilislegal@gmail.com" class="contact-link">elilislegal@gmail.com</a></p>
+                <p>Phone: <a href="tel:0790004418" class="contact-link">0790004418</a></p>
             </div>
         </section>
 
         <section class="slide right-slide">
-            <div class="content">
-                <h1>Religious Inquiry</h1>
-                <p>Exploring the intersection of faith, state, and spiritual consciousness.</p>
-                <div class="contact-info">
-                    <p>📧 elilislegal@gmail.com</p>
-                    <p>📞 0790004418</p>
-                </div>
+            <div class="category-tag">Spiritual Inquiry</div>
+            <h1>Religious Matters</h1>
+            <p>Exploration of faith, theology, and religious impact on society.</p>
+            
+            <div class="contact-footer">
+                <p>Email: <a href="mailto:elilislegal@gmail.com" class="contact-link">elilislegal@gmail.com</a></p>
+                <p>Phone: <a href="tel:0790004418" class="contact-link">0790004418</a></p>
             </div>
         </section>
+
     </div>
 
 </body>
